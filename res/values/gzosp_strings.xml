@@ -35,6 +35,7 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
     <string name="color_default">Default</string>
+    <string name="link_volume_option_title">Link ring and notification volume</string>
 
 </resources>
 
