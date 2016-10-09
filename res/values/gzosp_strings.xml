@@ -37,5 +37,9 @@
     <string name="color_default">Default</string>
     <string name="link_volume_option_title">Link ring and notification volume</string>
 
+    <!-- Quick unlock -->
+    <string name="unlock_quick_unlock_control_title">Quick unlock</string>
+    <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
+
 </resources>
 
