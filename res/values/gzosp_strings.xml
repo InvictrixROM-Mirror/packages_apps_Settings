@@ -23,6 +23,8 @@
     <string name="rom_version_title">GZOSP version</string>
 
     <string name="show_dev_already_enabled">No Need, Development settings are enabled by default.</string>
+    <string name="custom_settings">Armory</string>
+    <string name="custom_settings_summary">ROM Customization</string>
 
 </resources>
 
