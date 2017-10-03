@@ -37,5 +37,9 @@
     <string name="color_default">Default</string>
     <string name="link_volume_option_title">Link ring and notification volume</string>
 
+    <!-- Battery -->    
+    <string name="battery_image">Battery image</string>
+    <string name="battery_image_description">Show battery image in status bar</string>
+    
 </resources>
 
