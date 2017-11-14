@@ -335,10 +335,14 @@ public class FingerprintSettings extends SubSettings {
             final FooterPreference pref = mFooterPreferenceMixin.createFooterPreference();
             final EnforcedAdmin admin = RestrictedLockUtils.checkIfKeyguardFeaturesDisabled(
                     activity, DevicePolicyManager.KEYGUARD_DISABLE_FINGERPRINT, mUserId);
-            pref.setTitle(LearnMoreSpan.linkify(getText(admin != null
-                            ? R.string.security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled
-                            : R.string.security_settings_fingerprint_enroll_disclaimer),
-                    getString(getHelpResource()), admin));
+            final CharSequence msg = getText(admin != null
+                    ? R.string.security_settings_fingerprint_enroll_disclaimer_lockscreen_disabled
+                    : R.string.security_settings_fingerprint_enroll_disclaimer);
+            if (TextUtils.isEmpty(getString(getHelpResource()))) {
+                pref.setTitle(msg);
+            } else {
+                pref.setTitle(LearnMoreSpan.linkify(msg, getString(getHelpResource()), admin));
+            }
         }
 
         protected void removeFingerprintPreference(int fingerprintId) {
@@ -558,7 +562,7 @@ public class FingerprintSettings extends SubSettings {
             String prefName = genKey(fpId);
             FingerprintPreference fpref = (FingerprintPreference) findPreference(prefName);
             final Drawable highlight = getHighlightDrawable();
-            if (highlight != null) {
+            if (highlight != null && fpref != null) {
                 final View view = fpref.getView();
                 final int centerX = view.getWidth() / 2;
                 final int centerY = view.getHeight() / 2;

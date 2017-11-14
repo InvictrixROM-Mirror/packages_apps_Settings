@@ -2480,7 +2480,7 @@
     <!-- About phone screen, status item label  [CHAR LIMIT=40] -->
     <string name="firmware_version">Android version</string>
     <!-- About phone screen, status item label  [CHAR LIMIT=60] -->
-    <string name="security_patch">Android security patch level</string>
+    <string name="security_patch">Security patch level</string>
     <!-- About phone screen, status item label  [CHAR LIMIT=40] -->
     <string name="model_info">Model</string>
     <!-- About phone screen, dialog title for showing hardware information such as model, serial number, etc.[CHAR LIMIT=60] -->
@@ -7915,9 +7915,6 @@
 
     <!-- Toast message letting the user know the how to trigger telephony monitor -->
     <string name="telephony_monitor_toast">To apply telephony monitor change, reboot device</string>
-
-    <!-- Name of the setting to disable the automatic update -->
-    <string name="ota_disable_automatic_update">Automatic system updates</string>
 
     <!-- Label for category for data usage [CHAR LIMIT=30] -->
     <string name="usage">Usage</string>

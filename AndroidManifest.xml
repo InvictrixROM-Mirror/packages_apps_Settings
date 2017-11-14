@@ -420,6 +420,7 @@
 
         <activity android:name=".bluetooth.DevicePickerActivity"
                 android:label="@string/device_picker"
+                android:configChanges="orientation|keyboardHidden|screenSize"
                 android:clearTaskOnLaunch="true">
             <intent-filter>
                 <action android:name="android.bluetooth.devicepicker.action.LAUNCH" />
@@ -1840,6 +1841,12 @@
                 android:exported="true"
                 android:permission="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
 
+        <receiver android:name=".deviceinfo.UsbModeChooserReceiver">
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_STATE"/>
+            </intent-filter>
+        </receiver>>
+
         <activity android:name="Settings$ApnEditorActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:label="@string/apn_edit">
@@ -2325,11 +2332,11 @@
                 android:label="@string/crypt_keeper_encrypt_title">
             <intent-filter android:priority="1">
                 <action android:name="android.app.action.START_ENCRYPTION" />
-                <category android:name="android.intent.category.DEFAULT" /> />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" /> />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.CryptKeeperSettings" />
@@ -2432,8 +2439,8 @@
 
         <activity android:name=".nfc.HowItWorks"
                   android:label="@string/nfc_payment_settings_title"
+                  android:excludeFromRecents="true"
                   android:parentActivityName="Settings$PaymentSettingsActivity">
-                  android:excludeFromRecents="true">
         </activity>
 
         <activity android:name=".SmsDefaultDialog"
@@ -3106,6 +3113,47 @@
                 <data android:scheme="package" />
             </intent-filter>
         </activity>
+
+        <activity android:name="Settings$ArmoryActivity"
+            android:label="@string/custom_settings"
+            android:icon="@drawable/ic_settings_custom"
+            android:taskAffinity="">
+            <intent-filter android:priority="1">
+                <action android:name="com.android.settings.aicp.StartAe" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.VOICE_LAUNCH" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <intent-filter android:priority="8">
+                <action android:name="com.android.settings.action.SETTINGS" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.homepage" />
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.armory.settings.MainActivity" />
+            <meta-data android:name="com.android.settings.summary"
+                android:resource="@string/custom_settings_summary"/>
+            <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
+                android:value="true" />
+        </activity>
+
+        <activity-alias
+                android:enabled="true"
+                android:name="Settings$ArmoryLauncher"
+                android:icon="@mipmap/ic_launcher_armory"
+                android:label="@string/custom_settings"
+                android:targetActivity="Settings$ArmoryActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.armory.settings.MainActivity" />
+        </activity-alias>
 
         <!-- This is the longest AndroidManifest.xml ever. -->
     </application>
