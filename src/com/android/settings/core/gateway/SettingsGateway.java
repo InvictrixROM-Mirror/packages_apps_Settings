@@ -128,6 +128,10 @@ import com.android.settings.wifi.WifiSettings;
 import com.android.settings.wifi.p2p.WifiP2pSettings;
 
 import com.armory.settings.MainActivity;
+import com.armory.settings.fragments.FlingSettings;
+import com.armory.settings.fragments.NavigationBar;
+import com.armory.settings.fragments.PulseSettings;
+import com.armory.settings.fragments.SmartbarSettings;
 
 public class SettingsGateway {
 
@@ -247,6 +251,10 @@ public class SettingsGateway {
             WebViewAppPicker.class.getName(),
             LockscreenDashboardFragment.class.getName(),
             MainActivity.class.getName(),
+            NavigationBar.class.getName(),
+            FlingSettings.class.getName(),
+            SmartbarSettings.class.getName(),
+            PulseSettings.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -285,6 +293,10 @@ public class SettingsGateway {
             Settings.DateTimeSettingsActivity.class.getName(),
             Settings.DeviceInfoSettingsActivity.class.getName(),
             Settings.EnterprisePrivacySettingsActivity.class.getName(),
-            Settings.ArmoryActivity.class.getName()
+            Settings.ArmoryActivity.class.getName(),
+            Settings.NavigationSettingsActivity.class.getName(),
+            Settings.FlingSettingsActivity.class.getName(),
+            Settings.SmartbarSettingsActivity.class.getName(),
+            Settings.PulseSettingsActivity.class.getName()
     };
 }
