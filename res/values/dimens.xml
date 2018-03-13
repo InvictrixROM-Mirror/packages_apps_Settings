@@ -315,4 +315,5 @@
     <dimen name="suggestion_condition_header_padding_collapsed">10dp</dimen>
     <dimen name="suggestion_condition_header_padding_expanded">5dp</dimen>
 
+    <dimen name="alert_dialog_padding_material">20dp</dimen>
 </resources>
